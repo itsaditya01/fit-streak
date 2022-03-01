@@ -1,0 +1,12 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  background: var(--bg-color);
+}
+:root {
+  --bg-color: #323437;
+  --main-color: #ffcb10;
+  --roundness: 0.5rem;
+  --white: white;
+}

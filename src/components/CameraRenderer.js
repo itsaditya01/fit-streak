@@ -1,10 +1,9 @@
 import { useRef, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { squats } from "./ExercisesComponent";
+// import { useNavigate } from "react-router-dom";
+import { squats, pushUps } from "./ExercisesComponent";
 import "../styles/camerarenderer.css";
-import { drawConnectors, drawLandmarks } from "@mediapipe/drawing_utils";
 import { Camera } from "@mediapipe/camera_utils";
-import { Pose, POSE_CONNECTIONS } from "@mediapipe/pose";
+import { Pose } from "@mediapipe/pose";
 
 const pose = new Pose({
   locateFile: (file) => {
@@ -72,6 +71,7 @@ const connections = [
 const CameraRenderer = () => {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
+  const [exercise, setExercise] = useState("squats");
 
   useEffect(() => {
     pose.onResults(onResults);
@@ -89,7 +89,9 @@ const CameraRenderer = () => {
     if (!results.poseLandmarks) {
       return;
     }
+
     squats(results.poseLandmarks, data);
+    pushUps(results.poseLandmarks, data);
     const canvasCtx = canvasRef.current.getContext("2d");
     canvasCtx.save();
     canvasCtx.clearRect(
