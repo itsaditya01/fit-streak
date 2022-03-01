@@ -1,5 +1,6 @@
 import React from "react";
 import "./Navbar.css";
+import { FaUserAlt } from "react-icons/fa";
 
 function Navbar() {
   return (
@@ -7,9 +8,11 @@ function Navbar() {
       <nav className="navbar">
         <div className="container">
           <div className="navbar-brand">
-            <span>fit-streak</span>
+            <span>Fit Streak</span>
           </div>
-          <div></div>
+          <div className="user-icon">
+            <FaUserAlt />
+          </div>
         </div>
       </nav>
     </div>

@@ -2,7 +2,9 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  background: var(--bg-color);
+}
+body {
+  background-color: var(--bg-color);
 }
 :root {
   --bg-color: #323437;
