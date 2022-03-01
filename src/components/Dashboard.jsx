@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import CameraRenderer from "./CameraRenderer";
+import "../styles/dashboard.css";
 
 const Dashboard = () => {
   const [state, setState] = useState(false);
@@ -13,7 +14,7 @@ const Dashboard = () => {
 
   return (
     <div>
-      <button onClick={() => setState(!state)}>
+      <button className="start-btn" onClick={() => setState(!state)}>
         {state === false ? "Start" : "Stop"}
       </button>
       {state === true && <CameraRenderer />}

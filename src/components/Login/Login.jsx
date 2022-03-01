@@ -26,31 +26,64 @@ const Login = () => {
 
   return (
     <>
-      <Card>
-        <Card.Body>
-          <h2 className="text-center mb-4">Log In</h2>
+      <div>
+        <div
+          style={{
+            borderRadius: "1rem",
+            borderRadius: "1rem",
+            border: "1px solid white",
+            padding: 16,
+          }}
+        >
+          <h2 className="text-center mb-4" style={{ color: "white" }}>
+            Log In
+          </h2>
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
             <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" ref={emailRef} required></Form.Control>
+              <Form.Label style={{ color: "white" }}>Email</Form.Label>
+              <Form.Control
+                type="email"
+                ref={emailRef}
+                required
+                style={{ background: "#d1d0c5" }}
+              ></Form.Control>
             </Form.Group>
             <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
+              <Form.Label style={{ color: "white" }}>Password</Form.Label>
               <Form.Control
+                style={{ background: "#d1d0c5" }}
                 type="password"
                 ref={passwordRef}
                 required
               ></Form.Control>
             </Form.Group>
-            <Button disabled={loading} className="w-100 my-3" type="submit">
+            <Button
+              disabled={loading}
+              className="w-100 my-3"
+              type="submit"
+              style={{
+                background: "var(--main-color)",
+                border: "none",
+                outline: "none",
+                color: "white",
+                fontWeight: 600,
+                fontSize: 22,
+              }}
+            >
               Log In
             </Button>
           </Form>
-        </Card.Body>
-      </Card>
-      <div className="w-100 text-center mt-2">
-        Need an account? <Link to="/signup">Sign Up</Link>
+        </div>
+      </div>
+      <div className="w-100 text-center mt-2" style={{ color: "white" }}>
+        Need an account?{" "}
+        <Link
+          to="/signup"
+          style={{ textDecoration: "none", color: "var(--main-color)" }}
+        >
+          Sign Up
+        </Link>
       </div>
     </>
   );

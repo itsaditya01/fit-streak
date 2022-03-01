@@ -24,46 +24,81 @@ const Signup = () => {
       navigate("/login");
     } catch (error) {
       setError("Failed to Signup");
-      console.log(error);
     }
     setLoading(false);
   };
 
   return (
     <>
-      <Card>
-        <Card.Body>
-          <h2 className="text-center mb-4">Sign Up</h2>
+      <>
+        <div
+          style={{
+            borderRadius: "1rem",
+            borderRadius: "1rem",
+            border: "1px solid white",
+            padding: 16,
+          }}
+        >
+          <h2 className="text-center mb-4" style={{ color: "white" }}>
+            Sign Up
+          </h2>
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
             <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" ref={emailRef} required></Form.Control>
+              <Form.Label style={{ color: "white" }}>Email</Form.Label>
+              <Form.Control
+                type="email"
+                ref={emailRef}
+                required
+                style={{ background: "#d1d0c5" }}
+              ></Form.Control>
             </Form.Group>
             <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
+              <Form.Label style={{ color: "white" }}>Password</Form.Label>
               <Form.Control
+                style={{ background: "#d1d0c5" }}
                 type="password"
                 ref={passwordRef}
                 required
               ></Form.Control>
             </Form.Group>
             <Form.Group id="password-confirm">
-              <Form.Label>Password Confirmation</Form.Label>
+              <Form.Label style={{ color: "white" }}>
+                Password Confirmation
+              </Form.Label>
               <Form.Control
+                style={{ background: "#d1d0c5" }}
                 type="password"
                 ref={passwordConfirmRef}
                 required
               ></Form.Control>
             </Form.Group>
-            <Button disabled={loading} className="w-100 my-3" type="submit">
+            <Button
+              disabled={loading}
+              className="w-100 my-3"
+              type="submit"
+              style={{
+                color: "white",
+                background: "var(--main-color)",
+                outline: "none",
+                border: "none",
+                fontWeight: 600,
+                fontSize: 22,
+              }}
+            >
               Sign Up
             </Button>
           </Form>
-        </Card.Body>
-      </Card>
-      <div className="w-100 text-center mt-2">
-        Already have an account? <Link to="/login">Log In</Link>
+        </div>
+      </>
+      <div className="w-100 text-center mt-2" style={{ color: "white" }}>
+        Already have an account?{" "}
+        <Link
+          to="/login"
+          style={{ textDecoration: "none", color: "var(--main-color)" }}
+        >
+          Log In
+        </Link>
       </div>
     </>
   );
