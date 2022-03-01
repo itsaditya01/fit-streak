@@ -1,0 +1,7 @@
+.navbar {
+  background-color: #e2b714;
+  width: 100vw;
+}
+.navbar-brand span {
+  font-size: 1.5rem;
+}
