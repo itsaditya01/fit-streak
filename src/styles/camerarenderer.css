@@ -1,0 +1,18 @@
+button {
+  background-color: #ff4444;
+  padding: 20px;
+  position: absolute;
+  top: 80%;
+  left: 80%;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  color: white;
+  z-index: 1;
+}
+
+video {
+  display: none;
+}
