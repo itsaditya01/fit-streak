@@ -1,0 +1,11 @@
+video {
+  display: none;
+}
+
+.count-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: var(--main-color);
+  padding: 10px 10px;
+}

@@ -1,0 +1,24 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--bg-color);
+}
+:root {
+  --bg-color: #323437;
+  --main-color: #ffcb10;
+  --roundness: 0.5rem;
+  --white: white;
+}
+
+button {
+  background-color: var(--main-color);
+  border: none;
+  border-radius: var(--roundness);
+  outline: none;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+}

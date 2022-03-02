@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
+
+.navbar {
+  background-color: var(--bg-color);
+  width: 100vw;
+  height: 7vh;
+}
+.navbar-brand span {
+  font-size: 1.5rem;
+  color: var(--main-color);
+  font-family: "DM Sans", sans-serif;
+}
+.user-icon {
+  color: var(--main-color);
+}
