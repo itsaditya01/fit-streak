@@ -1,8 +1,8 @@
 // exercise naming convention : neck_rotation, squat, sprawl, plank, pushup, mountain_climb, lunges, warrior_one, warrior_two
 
-let WebData = {
+export const WebData = {
   moreThan40: {
-    1: {
+    day1: {
       exercise: [
         {
           name: "neck_rotation",
@@ -15,7 +15,7 @@ let WebData = {
           reps: 5,
         },
         {
-          name: "sprawl",
+          name: "pushup",
           sets: 1,
           reps: 5,
         },
@@ -30,7 +30,7 @@ let WebData = {
           reps: 5,
         },
         {
-          name: "plank",
+          name: "pushup",
           sets: 1,
           reps: 5,
         },
@@ -41,7 +41,7 @@ let WebData = {
         },
       ],
     },
-    2: {
+    day2: {
       exercise: [
         {
           name: "neck_rotation",
@@ -80,7 +80,7 @@ let WebData = {
         },
       ],
     },
-    3: {
+    day3: {
       exercise: [
         {
           name: "neck_rotation",
@@ -119,7 +119,7 @@ let WebData = {
         },
       ],
     },
-    4: {
+    day4: {
       exercise: [
         {
           name: "neck_rotation",
@@ -158,7 +158,7 @@ let WebData = {
         },
       ],
     },
-    5: {
+    day5: {
       exercise: [
         {
           name: "neck_rotation",
@@ -197,7 +197,7 @@ let WebData = {
         },
       ],
     },
-    1: {
+    day6: {
       exercise: [
         {
           name: "neck_rotation",
@@ -238,7 +238,7 @@ let WebData = {
     },
   },
   lessThan40: {
-    1: {
+    day1: {
       exercise: [
         {
           name: "neck_rotation",
@@ -277,7 +277,7 @@ let WebData = {
         },
       ],
     },
-    2: {
+    day2: {
       exercise: [
         {
           name: "neck_rotation",
@@ -316,7 +316,7 @@ let WebData = {
         },
       ],
     },
-    3: {
+    day3: {
       exercise: [
         {
           name: "neck_rotation",
@@ -355,7 +355,7 @@ let WebData = {
         },
       ],
     },
-    4: {
+    day4: {
       exercise: [
         {
           name: "neck_rotation",
@@ -394,7 +394,7 @@ let WebData = {
         },
       ],
     },
-    5: {
+    day5: {
       exercise: [
         {
           name: "neck_rotation",
@@ -433,7 +433,7 @@ let WebData = {
         },
       ],
     },
-    6: {
+    day6: {
       exercise: [
         {
           name: "neck_rotation",

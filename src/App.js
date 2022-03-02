@@ -12,7 +12,7 @@ function App() {
         <Router>
           <AuthProvider>
             <Routes>
-              <Route exact path="/" element={<Home />} />
+              <Route exact path="/" element={<Dashboard />} />
               <Route exact path="/signup" element={<Signup />} />
               <Route exact path="/login" element={<Login />} />
             </Routes>

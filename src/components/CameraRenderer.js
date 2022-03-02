@@ -4,6 +4,7 @@ import { squats, pushUps } from "./ExercisesComponent";
 import "../styles/camerarenderer.css";
 import { Camera } from "@mediapipe/camera_utils";
 import { Pose } from "@mediapipe/pose";
+import { WebData } from "../helper/WebData";
 
 const pose = new Pose({
   locateFile: (file) => {
@@ -72,6 +73,9 @@ const CameraRenderer = () => {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const [exercise, setExercise] = useState("squats");
+  WebData.lessThan40.day1.exercise.map((item) => {
+    setExercise(item.name);
+  });
 
   useEffect(() => {
     pose.onResults(onResults);
@@ -89,7 +93,6 @@ const CameraRenderer = () => {
     if (!results.poseLandmarks) {
       return;
     }
-
     squats(results.poseLandmarks, data);
     pushUps(results.poseLandmarks, data);
     const canvasCtx = canvasRef.current.getContext("2d");
@@ -139,15 +142,33 @@ const CameraRenderer = () => {
         canvasCtx.stroke();
       }
     });
-    canvasCtx.font = "32px Arial";
-    canvasCtx.fillText(`Count = ${data.count}`, 50, 50);
+    // canvasCtx.font = "32px Arial";
+    // canvasCtx.fillStyle = "#ffcb10";
+    // canvasCtx.fillText(`Count = ${data.count}`, 50, 50);
     canvasCtx.restore();
+    count = data.count;
   }
+
+  const ExerciseBar = () => {
+    return;
+    <></>;
+  };
+
+  const CountBar = () => {
+    return (
+      <div className="count-wrapper">
+        <div className="cout-inner">
+          <div className="count">{`Reps : ${count}`}</div>
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div>
       <video ref={videoRef}></video>
       <canvas ref={canvasRef} width={"1280px"} height={"720px"}></canvas>
+      <CountBar />
     </div>
   );
 };
