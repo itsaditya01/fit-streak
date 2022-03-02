@@ -11,10 +11,6 @@ const UserSchema = new Schema({
     type: String,
     required: true,
   },
-  password: {
-    type: String,
-    required: true,
-  },
   friends: {
     type: Array,
     default: [],
@@ -23,8 +19,22 @@ const UserSchema = new Schema({
     type: Number,
     default: 0,
   },
+  height: {
+    type: Number,
+    required: true,
+  },
+  weight: {
+    type: Number,
+    required: true,
+  },
+  age: {
+    type: Number,
+    required: true,
+  },
   Date: {
     type: Date,
     default: Date.now,
   },
 });
+
+module.exports = mongoose.model("user", UserSchema);

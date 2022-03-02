@@ -7,7 +7,7 @@ const Signup = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
-  const { signup, currentUser } = useAuth();
+  const { signup } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ const Signup = () => {
       setLoading(true);
       setError("");
       await signup(emailRef.current.value, passwordRef.current.value);
-      navigate("/");
+      navigate("/userinfo");
     } catch (error) {
       setError("Failed to Signup");
     }
