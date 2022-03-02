@@ -34,7 +34,7 @@ const Login = () => {
         alignItems: "center",
         justifyContent: "center",
         flexDirection: "column",
-        background: "var(--main-color)",
+        background: "var(--bg-color)",
       }}
     >
       <div>

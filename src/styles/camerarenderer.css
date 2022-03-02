@@ -4,6 +4,7 @@ video {
 
 .count-wrapper {
   position: absolute;
+  display: flex;
   left: 0;
   top: 0;
   background-color: var(--main-color);

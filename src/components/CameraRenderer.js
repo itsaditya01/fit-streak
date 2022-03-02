@@ -1,10 +1,11 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useContext } from "react";
 // import { useNavigate } from "react-router-dom";
 import { squats, pushUps } from "./ExercisesComponent";
 import "../styles/camerarenderer.css";
 import { Camera } from "@mediapipe/camera_utils";
 import { Pose } from "@mediapipe/pose";
 import { WebData } from "../data/WebData";
+import { useExercise } from "../context/ExerciseContext";
 
 const pose = new Pose({
   locateFile: (file) => {
@@ -24,10 +25,10 @@ pose.setOptions({
 
 const connectorColor = "white";
 
-let count = 0;
-
 let data = {
   count: 0,
+  ind: 0,
+  reps: 5,
 };
 
 const connections = [
@@ -72,11 +73,13 @@ const connections = [
 const CameraRenderer = () => {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
-  const [exercise, setExercise] = useState("squats");
-  WebData.lessThan40.day1.exercise.map((item) => {
-    setExercise(item.name);
-  });
-
+  const context = useExercise();
+  const { exercises, setExercisesFor7Days } = context;
+  const [curIndex, setCurIndex] = useState(0);
+  const [reps, setReps] = useState(5);
+  useEffect(() => {
+    setExercisesFor7Days();
+  }, []);
   useEffect(() => {
     pose.onResults(onResults);
     const camera = new Camera(videoRef.current, {
@@ -93,8 +96,24 @@ const CameraRenderer = () => {
     if (!results.poseLandmarks) {
       return;
     }
-    squats(results.poseLandmarks, data);
-    pushUps(results.poseLandmarks, data);
+    if (exercises[curIndex].name === "Squats") {
+      squats(results.poseLandmarks, data);
+      setReps(exercises[curIndex].reps);
+    } else if (exercises[curIndex].name === "Push Ups") {
+      pushUps(results.poseLandmarks, data);
+      setReps(exercises[curIndex].reps);
+    } else if (exercises[curIndex].name === "Neck Rotation") {
+      pushUps(results.poseLandmarks, data);
+      setReps(exercises[curIndex].reps);
+    }
+    setReps(exercises[curIndex].reps - data.count);
+    if (data.reps <= 0) {
+      setCurIndex(curIndex + 1);
+      data.ind++;
+      console.log("changed", data.ind, reps);
+      return;
+      // setReps(exercises[curIndex].reps);
+    }
     const canvasCtx = canvasRef.current.getContext("2d");
     canvasCtx.save();
     canvasCtx.clearRect(
@@ -146,7 +165,6 @@ const CameraRenderer = () => {
     // canvasCtx.fillStyle = "#ffcb10";
     // canvasCtx.fillText(`Count = ${data.count}`, 50, 50);
     canvasCtx.restore();
-    count = data.count;
   }
 
   const ExerciseBar = () => {
@@ -158,7 +176,7 @@ const CameraRenderer = () => {
     return (
       <div className="count-wrapper">
         <div className="cout-inner">
-          <div className="count">{`Reps : ${count}`}</div>
+          <div className="count">{`Reps : ${reps}`}</div>
         </div>
       </div>
     );
