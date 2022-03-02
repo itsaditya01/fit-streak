@@ -6,7 +6,7 @@ import Friends from "../../Friends/Friends";
 import Friend1 from "../../assets/people1.jpg";
 import Friend2 from "../../assets/people2.jpg";
 import Friend3 from "../../assets/people3.jpeg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -36,7 +36,14 @@ const Hero = () => {
             Complete the daily exercises and flex in front of your friends
           </p>
           <div className="btn-div">
-            <button className="start-btn">Start Grinding</button>
+            <Link
+              type="button"
+              className="start-btn "
+              style={{ color: "var(--main-color)", textDecoration: "none" }}
+              to="/camerarenderer"
+            >
+              Start Grinding
+            </Link>
             <button
               className="room-btn"
               onClick={() => navigate("/room/dashboard")}
