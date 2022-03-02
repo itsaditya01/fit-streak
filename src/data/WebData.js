@@ -5,6 +5,21 @@ export const WebData = {
     day1: {
       exercise: [
         {
+          name: "Squats",
+          sets: 1,
+          reps: 1,
+        },
+        {
+          name: "Squats",
+          sets: 1,
+          reps: 5,
+        },
+        {
+          name: "Push Ups",
+          sets: 1,
+          reps: 5,
+        },
+        {
           name: "Neck Rotation",
           sets: 1,
           reps: 5,
@@ -15,22 +30,7 @@ export const WebData = {
           reps: 5,
         },
         {
-          name: "Sprawl",
-          sets: 1,
-          reps: 5,
-        },
-        {
-          name: "Neck Rotation",
-          sets: 1,
-          reps: 5,
-        },
-        {
-          name: "Squats",
-          sets: 1,
-          reps: 5,
-        },
-        {
-          name: "Planks",
+          name: "Push Ups",
           sets: 1,
           reps: 5,
         },

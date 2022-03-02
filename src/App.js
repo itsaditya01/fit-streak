@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
 import Login from "./components/Login/Login";
 import Home from "./components/Home/Home";
+import ExerciseProvider from "./context/ExerciseContext";
 
 function App() {
   return (
@@ -11,11 +12,13 @@ function App() {
       <div className="w-100">
         <Router>
           <AuthProvider>
-            <Routes>
-              <Route exact path="/" element={<Dashboard />} />
-              <Route exact path="/signup" element={<Signup />} />
-              <Route exact path="/login" element={<Login />} />
-            </Routes>
+            <ExerciseProvider>
+              <Routes>
+                <Route exact path="/" element={<Dashboard />} />
+                <Route exact path="/signup" element={<Signup />} />
+                <Route exact path="/login" element={<Login />} />
+              </Routes>
+            </ExerciseProvider>
           </AuthProvider>
         </Router>
       </div>

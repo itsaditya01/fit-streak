@@ -65,7 +65,7 @@ export const squats = (poses, data) => {
     }
     if ((previous_state === 1 || previous_state === 2) && state === 0) {
       data.count++;
-      console.log("incremented", data.count);
+      data.reps--;
 
       // data.countTime = new Date().getSeconds();
 
