@@ -18,9 +18,6 @@ const Dashboard = () => {
         {state === false ? "Start" : "Stop"}
       </button>
       {state === true && <CameraRenderer />}
-      {/* <Link to="/login" onClick={handleLogout}>
-        Log Out
-      </Link> */}
     </div>
   );
 };

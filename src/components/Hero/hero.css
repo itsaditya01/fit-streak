@@ -1,0 +1,56 @@
+.main-hero {
+  height: 93vh;
+  width: 100vw;
+  display: flex;
+}
+
+.left-hero {
+  flex: 70%;
+}
+.right-hero {
+  flex: 30%;
+}
+
+.daily-goal {
+  width: 80%;
+  margin: auto;
+  padding: 16px;
+  border: 1px solid white;
+  border-radius: var(--roundness);
+  margin-top: 70px;
+  position: relative;
+}
+.btn-div {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+.start-btn {
+  padding: 10px;
+  z-index: 1;
+}
+
+.room-btn {
+  background-color: #63666b;
+  padding: 10px;
+  margin-left: 20px;
+}
+
+.streak-div {
+  width: 35%;
+  position: absolute;
+  right: 50px;
+  top: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.friend-acheivments {
+  width: 80%;
+  margin: auto;
+  padding: 16px;
+  border: 1px solid white;
+  border-radius: var(--roundness);
+  margin-top: 70px;
+}

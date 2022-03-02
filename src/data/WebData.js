@@ -1,41 +1,41 @@
-// exercise naming convention : neck_rotation, squat, sprawl, plank, pushup, mountain_climb, lunges, warrior_one, warrior_two
+// exercise naming convention : Neck Rotation, Squats, Sprawl, Planks, Push Ups, mountain_climb, lunges, Warrior one, Warrior two
 
 export const WebData = {
   moreThan40: {
     day1: {
       exercise: [
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 5,
         },
         {
-          name: "squat",
+          name: "Squats",
           sets: 1,
           reps: 5,
         },
         {
-          name: "pushup",
+          name: "Sprawl",
           sets: 1,
           reps: 5,
         },
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 5,
         },
         {
-          name: "squat",
+          name: "Squats",
           sets: 1,
           reps: 5,
         },
         {
-          name: "pushup",
+          name: "Planks",
           sets: 1,
           reps: 5,
         },
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 5,
         },
@@ -44,12 +44,12 @@ export const WebData = {
     day2: {
       exercise: [
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 5,
         },
         {
-          name: "pushup",
+          name: "Push Ups",
           sets: 1,
           reps: 5,
         },
@@ -59,22 +59,22 @@ export const WebData = {
           reps: 5,
         },
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 5,
         },
         {
-          name: "pushup",
+          name: "Push Ups",
           sets: 1,
           reps: 5,
         },
         {
-          name: "plank",
+          name: "Planks",
           sets: 1,
           reps: 5,
         },
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 5,
         },
@@ -83,7 +83,7 @@ export const WebData = {
     day3: {
       exercise: [
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 5,
         },
@@ -98,7 +98,7 @@ export const WebData = {
           reps: 5,
         },
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 5,
         },
@@ -108,12 +108,12 @@ export const WebData = {
           reps: 5,
         },
         {
-          name: "plank",
+          name: "Planks",
           sets: 1,
           reps: 5,
         },
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 5,
         },
@@ -122,12 +122,12 @@ export const WebData = {
     day4: {
       exercise: [
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 5,
         },
         {
-          name: "squat",
+          name: "Squats",
           sets: 1,
           reps: 5,
         },
@@ -137,22 +137,22 @@ export const WebData = {
           reps: 5,
         },
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 5,
         },
         {
-          name: "squat",
+          name: "Squats",
           sets: 1,
           reps: 5,
         },
         {
-          name: "plank",
+          name: "Planks",
           sets: 1,
           reps: 5,
         },
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 5,
         },
@@ -161,37 +161,37 @@ export const WebData = {
     day5: {
       exercise: [
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 5,
         },
         {
-          name: "squat",
+          name: "Squats",
           sets: 1,
           reps: 5,
         },
         {
-          name: "warrior_one",
+          name: "Warrior one",
           sets: 1,
           reps: 5,
         },
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 5,
         },
         {
-          name: "squat",
+          name: "Squats",
           sets: 1,
           reps: 5,
         },
         {
-          name: "plank",
+          name: "Planks",
           sets: 1,
           reps: 5,
         },
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 5,
         },
@@ -200,37 +200,37 @@ export const WebData = {
     day6: {
       exercise: [
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 5,
         },
         {
-          name: "pushup",
+          name: "Push Ups",
           sets: 1,
           reps: 5,
         },
         {
-          name: "warrior_two",
+          name: "Warrior two",
           sets: 1,
           reps: 5,
         },
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 5,
         },
         {
-          name: "pushup",
+          name: "Push Ups",
           sets: 1,
           reps: 5,
         },
         {
-          name: "plank",
+          name: "Planks",
           sets: 1,
           reps: 5,
         },
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 5,
         },
@@ -241,37 +241,37 @@ export const WebData = {
     day1: {
       exercise: [
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 5,
         },
         {
-          name: "squat",
+          name: "Squats",
           sets: 1,
           reps: 5,
         },
         {
-          name: "sprawl",
+          name: "Sprawl",
           sets: 1,
           reps: 5,
         },
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 5,
         },
         {
-          name: "squat",
+          name: "Squats",
           sets: 1,
           reps: 5,
         },
         {
-          name: "plank",
+          name: "Planks",
           sets: 1,
           reps: 5,
         },
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 5,
         },
@@ -280,12 +280,12 @@ export const WebData = {
     day2: {
       exercise: [
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 10,
         },
         {
-          name: "pushup",
+          name: "Push Ups",
           sets: 1,
           reps: 10,
         },
@@ -295,22 +295,22 @@ export const WebData = {
           reps: 10,
         },
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 10,
         },
         {
-          name: "pushup",
+          name: "Push Ups",
           sets: 1,
           reps: 10,
         },
         {
-          name: "plank",
+          name: "Planks",
           sets: 1,
           reps: 10,
         },
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 10,
         },
@@ -319,7 +319,7 @@ export const WebData = {
     day3: {
       exercise: [
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 10,
         },
@@ -334,7 +334,7 @@ export const WebData = {
           reps: 10,
         },
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 10,
         },
@@ -344,12 +344,12 @@ export const WebData = {
           reps: 10,
         },
         {
-          name: "plank",
+          name: "Planks",
           sets: 1,
           reps: 10,
         },
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 10,
         },
@@ -358,12 +358,12 @@ export const WebData = {
     day4: {
       exercise: [
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 10,
         },
         {
-          name: "squat",
+          name: "Squats",
           sets: 1,
           reps: 10,
         },
@@ -373,22 +373,22 @@ export const WebData = {
           reps: 10,
         },
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 10,
         },
         {
-          name: "squat",
+          name: "Squats",
           sets: 1,
           reps: 10,
         },
         {
-          name: "plank",
+          name: "Planks",
           sets: 1,
           reps: 10,
         },
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 10,
         },
@@ -397,37 +397,37 @@ export const WebData = {
     day5: {
       exercise: [
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 10,
         },
         {
-          name: "squat",
+          name: "Squats",
           sets: 1,
           reps: 10,
         },
         {
-          name: "warrior_one",
+          name: "Warrior one",
           sets: 1,
           reps: 10,
         },
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 10,
         },
         {
-          name: "squat",
+          name: "Squats",
           sets: 1,
           reps: 10,
         },
         {
-          name: "plank",
+          name: "Planks",
           sets: 1,
           reps: 10,
         },
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 10,
         },
@@ -436,37 +436,37 @@ export const WebData = {
     day6: {
       exercise: [
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 10,
         },
         {
-          name: "pushup",
+          name: "Push Ups",
           sets: 1,
           reps: 10,
         },
         {
-          name: "warrior_two",
+          name: "Warrior two",
           sets: 1,
           reps: 10,
         },
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 10,
         },
         {
-          name: "pushup",
+          name: "Push Ups",
           sets: 1,
           reps: 10,
         },
         {
-          name: "plank",
+          name: "Planks",
           sets: 1,
           reps: 10,
         },
         {
-          name: "neck_rotation",
+          name: "Neck Rotation",
           sets: 1,
           reps: 10,
         },
