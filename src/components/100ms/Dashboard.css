@@ -1,7 +1,13 @@
 .create-room {
   padding: 16px;
   font-size: 22px;
+  box-shadow: 0px 2px 38px -10px rgba(0, 0, 0, 0.4);
   margin-bottom: 15px;
+}
+
+.create-btn {
+  padding: 16px;
+  font-size: 22px;
   box-shadow: 0px 2px 38px -10px rgba(0, 0, 0, 0.4);
 }
 
@@ -19,7 +25,7 @@
   width: 100vw;
 }
 
-.dash-main-div > div > input {
+input {
   width: 100%;
   background-color: rgba(241, 243, 244, 0.24);
   outline: none;

@@ -52,7 +52,7 @@ const Dashboard = () => {
       authToken: response.data.token,
     });
   };
-  return isConnected ? (
+  return !isConnected ? (
     <div className="dash-main-div df ac jcc fdc">
       {createRoom === 0 && (
         <>
@@ -72,30 +72,32 @@ const Dashboard = () => {
         </>
       )}
       {createRoom === 1 && (
-        <div>
+        <div style={{ height: "30vh" }} className="df ac sb fdc">
           <h1 style={{ color: "white" }}>Enter your nick name</h1>
           <input
             type="text"
             onChange={(e) => setInputVal(e.target.value)}
             value={inputVal}
+            style={{ color: "#d1d0c5" }}
           />
           <button
             onClick={() => {
               createRoomToken(inputVal);
             }}
-            className="create-room"
+            className="create-btn"
           >
             Create
           </button>
         </div>
       )}
       {createRoom === -1 && (
-        <>
+        <div style={{ height: "30vh" }} className="df ac sb fdc">
           <h1 style={{ color: "white" }}>Enter your nick name</h1>
           <input
             type="text"
             onChange={(e) => setInputVal(e.target.value)}
             value={inputVal}
+            style={{ color: "#d1d0c5" }}
           />
           <button
             onClick={() => {
@@ -105,7 +107,7 @@ const Dashboard = () => {
           >
             Join
           </button>
-        </>
+        </div>
       )}
     </div>
   ) : (
