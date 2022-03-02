@@ -35,3 +35,22 @@
   padding: 10px;
   margin-left: 20px;
 }
+
+.streak-div {
+  width: 35%;
+  position: absolute;
+  right: 50px;
+  top: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.friend-acheivments {
+  width: 80%;
+  margin: auto;
+  padding: 16px;
+  border: 1px solid white;
+  border-radius: var(--roundness);
+  margin-top: 70px;
+}
