@@ -7,6 +7,8 @@ const app = express();
 const port = 5000;
 
 app.use(express.json());
+app.use(cors());
+app.use("/api/token", require("./routes/100ms.js"));
 
 app.listen(port, () => {
   console.log("Success");

@@ -1,14 +1,15 @@
 .main-hero {
   height: 93vh;
-  width: 100vw;
   display: flex;
+  max-width: 100vw;
+  padding: 20px;
 }
 
 .left-hero {
-  flex: 70%;
+  flex: 60%;
 }
 .right-hero {
-  flex: 30%;
+  flex: 20%;
 }
 
 .daily-goal {

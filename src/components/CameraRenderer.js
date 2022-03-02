@@ -4,7 +4,7 @@ import { squats, pushUps } from "./ExercisesComponent";
 import "../styles/camerarenderer.css";
 import { Camera } from "@mediapipe/camera_utils";
 import { Pose } from "@mediapipe/pose";
-import { WebData } from "../helper/WebData";
+import { WebData } from "../data/WebData";
 
 const pose = new Pose({
   locateFile: (file) => {

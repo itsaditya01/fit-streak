@@ -1,8 +1,15 @@
 import { WebData } from "../../data/WebData";
 import Fire from "../../assets/Fire.png";
+import RightBar from "../../RightSideBar/RightBar";
 import "./hero.css";
+import Friends from "../../Friends/Friends";
+import Friend1 from "../../assets/people1.jpg";
+import Friend2 from "../../assets/people2.jpg";
+import Friend3 from "../../assets/people3.jpeg";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <div className="main-hero">
       <div className="left-hero">
@@ -30,16 +37,38 @@ const Hero = () => {
           </p>
           <div className="btn-div">
             <button className="start-btn">Start Grinding</button>
-            <button className="room-btn">Join your friends</button>
+            <button
+              className="room-btn"
+              onClick={() => navigate("/room/dashboard")}
+            >
+              Join your friends
+            </button>
           </div>
         </div>
         <div className="friend-acheivments">
-          <h1 style={{ color: "var(--main-color)" }}>
+          <h2 style={{ color: "var(--main-color)" }}>
             These friends are on a journey of self improvement
-          </h1>
+          </h2>
+          <Friends
+            friend_name="Laura Fisher"
+            friend_profile={Friend1}
+            friend_streak={2}
+          />
+          <Friends
+            friend_name="Sam Smith"
+            friend_profile={Friend2}
+            friend_streak={7}
+          />
+          <Friends
+            friend_name=" Monkey D Luffy"
+            friend_profile={Friend3}
+            friend_streak={17}
+          />
         </div>
       </div>
-      <div className="right-hero">Hello</div>
+      <div className="right-hero">
+        <RightBar />
+      </div>
     </div>
   );
 };

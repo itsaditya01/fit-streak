@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
 }
 body {
   background-color: var(--bg-color);
@@ -21,4 +23,35 @@ button {
   cursor: pointer;
   color: white;
   font-weight: 600;
+}
+
+.df {
+  display: flex;
+}
+
+.ac {
+  align-items: center;
+}
+.fdc {
+  flex-direction: column;
+}
+
+.sa {
+  justify-content: space-around;
+}
+
+.sb {
+  justify-content: space-between;
+}
+.se {
+  justify-content: space-evenly;
+}
+.cp {
+  cursor: pointer;
+}
+.ofc {
+  object-fit: cover;
+}
+.jcc {
+  justify-content: center;
 }

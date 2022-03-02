@@ -1,0 +1,24 @@
+.friend {
+  border-radius: 12px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.friend img {
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.friend-name {
+  font-weight: 500;
+  color: white;
+  margin-left: 40px;
+  /* margin-right: 40px; */
+}
+.friend-streak {
+  display: flex;
+  color: white;
+  margin-left: auto;
+  font-size: large;
+  align-items: center;
+}
