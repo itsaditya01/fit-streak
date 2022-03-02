@@ -25,7 +25,18 @@ const Login = () => {
   };
 
   return (
-    <>
+    <div
+      style={{
+        position: "fixed",
+        inset: 0,
+        overflowY: "auto",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "column",
+        background: "var(--main-color)",
+      }}
+    >
       <div>
         <div
           style={{
@@ -33,6 +44,7 @@ const Login = () => {
             borderRadius: "1rem",
             border: "1px solid white",
             padding: 16,
+            width: 400,
           }}
         >
           <h2 className="text-center mb-4" style={{ color: "white" }}>
@@ -85,7 +97,7 @@ const Login = () => {
           Sign Up
         </Link>
       </div>
-    </>
+    </div>
   );
 };
 

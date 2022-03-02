@@ -21,7 +21,7 @@ const Signup = () => {
       setLoading(true);
       setError("");
       await signup(emailRef.current.value, passwordRef.current.value);
-      navigate("/login");
+      navigate("/");
     } catch (error) {
       setError("Failed to Signup");
     }
@@ -29,14 +29,26 @@ const Signup = () => {
   };
 
   return (
-    <>
-      <>
+    <div
+      style={{
+        position: "fixed",
+        inset: 0,
+        overflowY: "auto",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "column",
+        background: "var(--main)",
+      }}
+    >
+      <div>
         <div
           style={{
             borderRadius: "1rem",
             borderRadius: "1rem",
             border: "1px solid white",
             padding: 16,
+            width: 400,
           }}
         >
           <h2 className="text-center mb-4" style={{ color: "white" }}>
@@ -90,7 +102,7 @@ const Signup = () => {
             </Button>
           </Form>
         </div>
-      </>
+      </div>
       <div className="w-100 text-center mt-2" style={{ color: "white" }}>
         Already have an account?{" "}
         <Link
@@ -100,7 +112,7 @@ const Signup = () => {
           Log In
         </Link>
       </div>
-    </>
+    </div>
   );
 };
 

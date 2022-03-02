@@ -8,7 +8,7 @@ function Navbar() {
       <nav className="navbar">
         <div className="container">
           <div className="navbar-brand">
-            <span>Fit Streak</span>
+            <span style={{ cursor: "pointer" }}>Fit Streak</span>
           </div>
           <div className="user-icon">
             <FaUserAlt />
