@@ -15,7 +15,12 @@ function ExerciseBar(props) {
         style={{ width: "calc(100vw - 1280px)" }}
       >
         <div className="exercise-inner w-100">
-          <ul style={{ listStyle: "none", paddingLeft: "0" }}>
+          <ul
+            style={{
+              listStyle: "none",
+              paddingLeft: "0",
+            }}
+          >
             {WebData.moreThan40.day1.exercise.map((item, index) => {
               return (
                 <li
@@ -24,6 +29,7 @@ function ExerciseBar(props) {
                       props.curIndex === index
                         ? "var(--bg-color)"
                         : "var(--main-color)",
+                    borderRadius: "var(--roundness)",
                     paddingBlock: "20px",
                     paddingInline: "10px",
                     width: "100%",

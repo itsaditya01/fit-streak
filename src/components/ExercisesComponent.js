@@ -9,7 +9,7 @@ import {
 var state = -1;
 var previous_state = -1;
 
-export const squats = (poses, data) => {
+export const squats = (poses, data, setter) => {
   let rb_angle = getAngleZ(poses[12], poses[24], poses[26]);
   let rk_angle = getAngleZ(poses[24], poses[26], poses[28]);
   let lb_angle = getAngleZ(poses[11], poses[23], poses[25]);
@@ -66,7 +66,8 @@ export const squats = (poses, data) => {
     if ((previous_state === 1 || previous_state === 2) && state === 0) {
       data.count++;
       data.reps--;
-
+      setter(data.reps);
+      console.log(data.reps, data.count);
       // data.countTime = new Date().getSeconds();
 
       // callback && callback();
@@ -100,7 +101,7 @@ export const squats = (poses, data) => {
   // }
 };
 
-export const pushUps = (poses, data) => {
+export const pushUps = (poses, data, setter) => {
   const angle_lk = getAngleZ(poses[23], poses[25], poses[27]);
   const angle_lh = getAngle(poses[11], poses[23], poses[25]);
   const angle_le = getAngle(poses[11], poses[13], poses[15]);
@@ -119,6 +120,9 @@ export const pushUps = (poses, data) => {
   }
   if (previous_state == 1 && state == 0) {
     data.count++;
+    console.log(data.count);
+    data.reps--;
+    setter(data.reps);
   }
   previous_state = state;
 };

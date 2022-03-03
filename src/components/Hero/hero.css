@@ -1,12 +1,12 @@
 .main-hero {
-  height: 93vh;
+  height: max-content;
   display: flex;
   max-width: 100vw;
   padding: 20px;
 }
 
 .left-hero {
-  flex: 60%;
+  flex: 70%;
 }
 .right-hero {
   flex: 20%;
@@ -18,7 +18,7 @@
   padding: 16px;
   border: 1px solid white;
   border-radius: var(--roundness);
-  margin-top: 70px;
+  margin-top: 40px;
   position: relative;
 }
 .btn-div {
@@ -53,5 +53,5 @@
   padding: 16px;
   border: 1px solid white;
   border-radius: var(--roundness);
-  margin-top: 70px;
+  margin-top: 40px;
 }

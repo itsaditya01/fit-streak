@@ -26,10 +26,10 @@ pose.setOptions({
 
 const connectorColor = "white";
 
-let data = {
+var data = {
   count: 0,
   ind: 0,
-  reps: 5,
+  reps: 1,
 };
 
 const connections = [
@@ -71,18 +71,27 @@ const connections = [
   [30, 32],
 ];
 
-const CameraRenderer = () => {
+const CameraRenderer = ({ videoCall }) => {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const context = useExercise();
   const { setExercisesFor7Days } = context;
   const exercises = WebData.moreThan40.day1.exercise;
-  const [curIndex, setCurIndex] = useState(0);
-  const [reps, setReps] = useState(exercises[curIndex].reps);
+  const [reps, setReps] = useState(exercises[data.ind].reps);
+  const [currIndex, setCurrIndex] = useState(data.ind);
+
   useEffect(() => {
-    setExercisesFor7Days();
-  }, []);
+    if (data.reps <= 0) {
+      data.ind++;
+      setCurrIndex(data.ind);
+      data.reps = exercises[data.ind].reps;
+      setReps(data.reps);
+      console.log(currIndex);
+    }
+    console.log("reps changed", reps);
+  }, [reps]);
   useEffect(() => {
+    data.reps = exercises[currIndex].reps;
     pose.onResults(onResults);
     const camera = new Camera(videoRef.current, {
       onFrame: async () => {
@@ -98,26 +107,18 @@ const CameraRenderer = () => {
     if (!results.poseLandmarks) {
       return;
     }
-    if (exercises[curIndex].name === "Squats") {
-      squats(results.poseLandmarks, data);
-      console.log("squats");
-      setReps(exercises[curIndex].reps);
-    } else if (exercises[curIndex].name === "Push Ups") {
-      console.log("pushup");
-      pushUps(results.poseLandmarks, data);
-      setReps(exercises[curIndex].reps);
-    } else if (exercises[curIndex].name === "Neck Rotation") {
-      console.log("neckrotation");
-      pushUps(results.poseLandmarks, data);
-      setReps(exercises[curIndex].reps);
+    if (exercises[currIndex].name === "Squats") {
+      data.reps = exercises[currIndex].reps;
+      squats(results.poseLandmarks, data, setReps);
+    } else if (exercises[currIndex].name === "Push Ups") {
+      data.reps = exercises[currIndex].reps;
+      pushUps(results.poseLandmarks, data, setReps);
+    } else if (exercises[currIndex].name === "Neck Rotation") {
+      data.reps = exercises[currIndex].reps;
+      console.log("neck");
+      squats(results.poseLandmarks, data, setReps);
     }
-    setReps(exercises[curIndex].reps - data.count);
-    if (reps <= 0) {
-      setCurIndex(curIndex + 1);
-      console.log("changed", data.ind, reps);
-      setReps(exercises[curIndex].reps);
-      return;
-    }
+
     const canvasCtx = canvasRef.current.getContext("2d");
     canvasCtx.save();
     canvasCtx.clearRect(
@@ -157,11 +158,24 @@ const CameraRenderer = () => {
         score1 >= scoreThreshold &&
         score2 >= scoreThreshold &&
         i > 10 &&
-        j > 10
+        j > 10 &&
+        !videoCall
       ) {
         canvasCtx.beginPath();
         canvasCtx.moveTo(point1.x * 1280, point1.y * 720);
         canvasCtx.lineTo(point2.x * 1280, point2.y * 720);
+        canvasCtx.stroke();
+      }
+      if (
+        score1 >= scoreThreshold &&
+        score2 >= scoreThreshold &&
+        i > 10 &&
+        j > 10 &&
+        videoCall
+      ) {
+        canvasCtx.beginPath();
+        canvasCtx.moveTo(point1.x * 900, point1.y * 600);
+        canvasCtx.lineTo(point2.x * 900, point2.y * 600);
         canvasCtx.stroke();
       }
     });
@@ -173,7 +187,10 @@ const CameraRenderer = () => {
 
   const CountBar = () => {
     return (
-      <div className="count-wrapper">
+      <div
+        className="count-wrapper"
+        style={{ borderRadius: "var(--roundness)" }}
+      >
         <div className="cout-inner">
           <div className="count">{`Reps : ${reps}`}</div>
         </div>
@@ -183,10 +200,15 @@ const CameraRenderer = () => {
 
   return (
     <div>
-      <video ref={videoRef}></video>
-      <canvas ref={canvasRef} width={"1280px"} height={"720px"}></canvas>
+      <video ref={videoRef} style={{ display: "none" }}></video>
+      <canvas
+        ref={canvasRef}
+        width={!videoCall ? "1280px" : "900px"}
+        height={!videoCall ? "720px" : "600px"}
+        style={{ borderRadius: "var(--roundness)" }}
+      ></canvas>
       <CountBar />
-      <ExerciseBar curIndex={curIndex} />
+      {!videoCall && <ExerciseBar curIndex={data.ind} />}
     </div>
   );
 };

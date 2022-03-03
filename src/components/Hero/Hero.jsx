@@ -36,14 +36,13 @@ const Hero = () => {
             Complete the daily exercises and flex in front of your friends
           </p>
           <div className="btn-div">
-            <Link
-              type="button"
-              className="start-btn "
-              style={{ color: "var(--main-color)", textDecoration: "none" }}
-              to="/camerarenderer"
+            <button
+              className="start-btn"
+              style={{ color: "white", textDecoration: "none" }}
+              onClick={() => navigate("/camerarenderer")}
             >
               Start Grinding
-            </Link>
+            </button>
             <button
               className="room-btn"
               onClick={() => navigate("/room/dashboard")}
