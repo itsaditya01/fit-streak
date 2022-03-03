@@ -7,6 +7,9 @@ import {
   selectIsLocalVideoEnabled,
 } from "@100mslive/hms-video-react";
 import "./Dashboard.css";
+import Conference from "./Conference";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const createRoomToken = async (name) => {
   const response = await fetch("https://prod-in2.100ms.live/api/v2/rooms", {
@@ -32,25 +35,27 @@ const Dashboard = () => {
   const [inputVal, setInputVal] = useState("");
   const isConnected = useHMSStore(selectIsConnectedToRoom);
   const hmsActions = useHMSActions();
+  const navigate = useNavigate();
 
-  const getToken = async () => {
+  const getToken = async ({ role }) => {
     let response;
-    response = await fetch(
-      "https://prod-in.100ms.live/hmsapi/psa.app.100ms.live/api/token",
+    response = await axios.post(
+      "https://prod-in.100ms.live/hmsapi/hyperfitpoc.app.100ms.live/api/token",
       {
-        method: "POST",
-        body: {
-          user_id: inputVal.name,
-          room_id: "621f578a7a9d04e28c60dc5b",
-          role: "host",
-        },
+        user_id: inputVal,
+        room_id: "620249fa6f2b876d58ef204a",
+        role: "trainer",
       }
     );
-    // console.log("role: ", role, " authToken: ", response.data.token);
+    console.log("role: ", role, " authToken: ", response.data.token);
     hmsActions.join({
       userName: inputVal,
       authToken: response.data.token,
     });
+    // hmsActions.join({
+    //   userName: inputVal,
+    //   authToken: response.data.token,
+    // });
   };
   return !isConnected ? (
     <div className="dash-main-div df ac jcc fdc">
@@ -82,7 +87,8 @@ const Dashboard = () => {
           />
           <button
             onClick={() => {
-              createRoomToken(inputVal);
+              //   createRoomToken(inputVal);
+              getToken("host");
             }}
             className="create-btn"
           >
@@ -101,7 +107,8 @@ const Dashboard = () => {
           />
           <button
             onClick={() => {
-              joinRoomToken(inputVal);
+              //   joinRoomToken(inputVal);
+              getToken("guest");
             }}
             className="create-room"
           >
@@ -111,7 +118,9 @@ const Dashboard = () => {
       )}
     </div>
   ) : (
-    <></>
+    <>
+      <Conference />
+    </>
   );
 };
 
