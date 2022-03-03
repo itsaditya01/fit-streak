@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# Fit Streak
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A quick and easy ready to go personal home gym. Fit Streak app is a very eay to access web application for our health concious customers to remain fit.
 
-## Available Scripts
+## Objective
 
-In the project directory, you can run:
+The main aim of this application is to bring BMI index of people to normal and for Good Wellbeing and Health. This app helps people to do excerise at home. No gym tutor is needed to guide you. Going to the gym is a very tedious work and time consuming and time is money. So to save money and time we have used the Computer Vision technology to help you stay fit.
 
-### `npm start`
+## How it works ?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This app asks customers for their height, weight, and age to calculate their BMI. Then according to their BMI and age weekly task excerise are allocated to them. The function of Streak is also added to motivate customers to access our app and complete thei excerise daily. Our customers can even connect with their friends and get little competitive on who has more streaks for fun and better health. Our customers can also access the room and do excerise toghether with their friends through video conference call.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- Live room session with friends
+- Age friendly
+- Healthy
+- Cost Free
+- Accessible
+- Convenient
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tech Stack
 
-### `npm run build`
+**Client:** React, Firebase, MediaPipe Library, 100ms Library, OpenCV Library
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Server:** Node, Express, MongoDB
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Run Locally
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Clone the project
 
-### `npm run eject`
+```bash
+  git clone https://github.com/itsaditya01/fit-streak
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Go to the project directory
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+  cd fit-streak
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Install Frontend dependencies
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+  npm install
+```
 
-## Learn More
+Go to the project backend directory
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+  cd .\backend
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Install Backendend dependencies
 
-### Code Splitting
+```bash
+  npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Start the server
 
-### Analyzing the Bundle Size
+```bash
+  nodemon .\index.js
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Start the local app
 
-### Making a Progressive Web App
+```bash
+  npm run start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Authors
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Aditya Chauhan](https://github.com/itsaditya01)
+- [Pratham Shah](https://github.com/smitbhansali)
+- [Smit Bhansali](https://github.com/smitbhansali)
