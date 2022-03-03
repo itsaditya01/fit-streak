@@ -51,7 +51,7 @@ Go to the project backend directory
   cd .\backend
 ```
 
-Install Backendend dependencies
+Install Backend dependencies
 
 ```bash
   npm install
