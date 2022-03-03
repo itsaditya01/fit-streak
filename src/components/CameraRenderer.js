@@ -71,7 +71,7 @@ const connections = [
   [30, 32],
 ];
 
-const CameraRenderer = () => {
+const CameraRenderer = ({ videoCall }) => {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const context = useExercise();
@@ -157,11 +157,24 @@ const CameraRenderer = () => {
         score1 >= scoreThreshold &&
         score2 >= scoreThreshold &&
         i > 10 &&
-        j > 10
+        j > 10 &&
+        !videoCall
       ) {
         canvasCtx.beginPath();
         canvasCtx.moveTo(point1.x * 1280, point1.y * 720);
         canvasCtx.lineTo(point2.x * 1280, point2.y * 720);
+        canvasCtx.stroke();
+      }
+      if (
+        score1 >= scoreThreshold &&
+        score2 >= scoreThreshold &&
+        i > 10 &&
+        j > 10 &&
+        videoCall
+      ) {
+        canvasCtx.beginPath();
+        canvasCtx.moveTo(point1.x * 900, point1.y * 600);
+        canvasCtx.lineTo(point2.x * 900, point2.y * 600);
         canvasCtx.stroke();
       }
     });
@@ -183,10 +196,15 @@ const CameraRenderer = () => {
 
   return (
     <div>
-      <video ref={videoRef}></video>
-      <canvas ref={canvasRef} width={"1280px"} height={"720px"}></canvas>
+      <video ref={videoRef} style={{ display: "none" }}></video>
+      <canvas
+        ref={canvasRef}
+        width={!videoCall ? "1280px" : "900px"}
+        height={!videoCall ? "720px" : "600px"}
+        style={{ borderRadius: "var(--roundness)" }}
+      ></canvas>
       <CountBar />
-      <ExerciseBar curIndex={curIndex} />
+      {!videoCall && <ExerciseBar curIndex={curIndex} />}
     </div>
   );
 };

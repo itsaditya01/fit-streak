@@ -37,17 +37,17 @@ const Dashboard = () => {
   const hmsActions = useHMSActions();
   const navigate = useNavigate();
 
-  const getToken = async ({ role }) => {
+  const getToken = async () => {
     let response;
     response = await axios.post(
-      "https://prod-in.100ms.live/hmsapi/hyperfitpoc.app.100ms.live/api/token",
+      "https://prod-in.100ms.live/hmsapi/psa.app.100ms.live/api/token",
       {
         user_id: inputVal,
-        room_id: "620249fa6f2b876d58ef204a",
-        role: "trainer",
+        room_id: "62209a63692b6d05230a14fe",
+        role: "host",
       }
     );
-    console.log("role: ", role, " authToken: ", response.data.token);
+    // console.log("role: ", role, " authToken: ", response.data.token);
     hmsActions.join({
       userName: inputVal,
       authToken: response.data.token,

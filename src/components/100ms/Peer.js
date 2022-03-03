@@ -4,12 +4,14 @@ import {
   selectVideoTrackByPeerID,
 } from "@100mslive/hms-video-react";
 import { useRef, useEffect } from "react";
+import CameraRenderer from "../CameraRenderer";
 
 function Peer({ peer }) {
   // console.log(peer)
   const videoRef = useRef(null);
   const hmsActions = useHMSActions();
   const videoTrack = useHMSStore(selectVideoTrackByPeerID(peer.id));
+  console.log(peer);
 
   useEffect(() => {
     if (videoRef.current && videoTrack) {
@@ -29,28 +31,24 @@ function Peer({ peer }) {
     //     : {}
     // }
     >
-      <video
-        style={
-          {
+      {!peer.isLocal ? (
+        <video
+          style={{
             width: "auto",
             height: peer.isLocal && 600,
             maxWidth: peer.isLocal ? 1000 : 400,
             borderRadius: "var(--roundness)",
             marginLeft: 40,
-          }
-          // : {
-          //     width: "auto",
-          //     maxWidth: 462,
-          //     height: window.innerHeight / 2 - 10,
-          //     maxHeight: 300,
-          //   }
-        }
-        ref={videoRef}
-        className={`peer-video ${peer.isLocal ? "local" : ""}`}
-        autoPlay
-        muted
-        playsInline
-      />
+          }}
+          ref={videoRef}
+          className={`peer-video ${peer.isLocal ? "local" : ""}`}
+          autoPlay
+          muted
+          playsInline
+        />
+      ) : (
+        <CameraRenderer videoCall={true} />
+      )}
       <div style={{ fontSize: 12, color: "white", marginLeft: 40 }}>
         {peer.name} {peer.isLocal ? "(You)" : ""}
       </div>
