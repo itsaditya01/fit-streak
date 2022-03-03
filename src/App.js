@@ -8,7 +8,7 @@ import ExerciseProvider from "./context/ExerciseContext";
 import React from "react";
 import Userinfo from "./components/Userinfo";
 import { HMSRoomProvider } from "@100mslive/hms-video-react";
-
+import CameraRenderer from "./components/CameraRenderer";
 function App() {
   return (
     <>
@@ -19,10 +19,15 @@ function App() {
               <ExerciseProvider>
                 <Routes>
                   <Route exact path="/" element={<Home />} />
+                  <Route exact path="/signup" element={<Signup />} />
+                  <Route exact path="/login" element={<Login />} />
+                  <Route exact path="/userinfo" element={<Userinfo />} />
                   <Route exact path="/room/dashboard" element={<Dashboard />} />
-                  {/* <Route exact path="/signup" element={<Signup />} />
-                  <Route exact path="/login" element={<Login />} /> */}
-                  {/* <Route exact path="/userinfo" element={<Userinfo />} /> */}
+                  <Route
+                    exact
+                    path="/camerarenderer"
+                    element={<CameraRenderer />}
+                  />
                 </Routes>
               </ExerciseProvider>
             </AuthProvider>

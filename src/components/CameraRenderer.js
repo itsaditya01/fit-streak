@@ -6,6 +6,7 @@ import { Camera } from "@mediapipe/camera_utils";
 import { Pose } from "@mediapipe/pose";
 import { WebData } from "../data/WebData";
 import { useExercise } from "../context/ExerciseContext";
+import ExerciseBar from "./ExerciseBar/ExerciseBar";
 
 const pose = new Pose({
   locateFile: (file) => {
@@ -74,9 +75,10 @@ const CameraRenderer = () => {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const context = useExercise();
-  const { exercises, setExercisesFor7Days } = context;
+  const { setExercisesFor7Days } = context;
+  const exercises = WebData.moreThan40.day1.exercise;
   const [curIndex, setCurIndex] = useState(0);
-  const [reps, setReps] = useState(5);
+  const [reps, setReps] = useState(exercises[curIndex].reps);
   useEffect(() => {
     setExercisesFor7Days();
   }, []);
@@ -98,21 +100,23 @@ const CameraRenderer = () => {
     }
     if (exercises[curIndex].name === "Squats") {
       squats(results.poseLandmarks, data);
+      console.log("squats");
       setReps(exercises[curIndex].reps);
     } else if (exercises[curIndex].name === "Push Ups") {
+      console.log("pushup");
       pushUps(results.poseLandmarks, data);
       setReps(exercises[curIndex].reps);
     } else if (exercises[curIndex].name === "Neck Rotation") {
+      console.log("neckrotation");
       pushUps(results.poseLandmarks, data);
       setReps(exercises[curIndex].reps);
     }
     setReps(exercises[curIndex].reps - data.count);
-    if (data.reps <= 0) {
+    if (reps <= 0) {
       setCurIndex(curIndex + 1);
-      data.ind++;
       console.log("changed", data.ind, reps);
+      setReps(exercises[curIndex].reps);
       return;
-      // setReps(exercises[curIndex].reps);
     }
     const canvasCtx = canvasRef.current.getContext("2d");
     canvasCtx.save();
@@ -167,11 +171,6 @@ const CameraRenderer = () => {
     canvasCtx.restore();
   }
 
-  const ExerciseBar = () => {
-    return;
-    <></>;
-  };
-
   const CountBar = () => {
     return (
       <div className="count-wrapper">
@@ -187,6 +186,7 @@ const CameraRenderer = () => {
       <video ref={videoRef}></video>
       <canvas ref={canvasRef} width={"1280px"} height={"720px"}></canvas>
       <CountBar />
+      <ExerciseBar curIndex={curIndex} />
     </div>
   );
 };
