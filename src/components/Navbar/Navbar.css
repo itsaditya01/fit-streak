@@ -11,5 +11,8 @@
   font-family: "DM Sans", sans-serif;
 }
 .user-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--main-color);
 }

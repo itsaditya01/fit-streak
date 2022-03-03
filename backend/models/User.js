@@ -15,6 +15,10 @@ const UserSchema = new Schema({
     type: Array,
     default: [],
   },
+  friendsreq: {
+    type: Array,
+    default: [],
+  },
   streak: {
     type: Number,
     default: 0,

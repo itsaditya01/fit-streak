@@ -19,16 +19,14 @@ const getToken = async () => {
       expiresIn: "24h",
       jwtid: uuid4(),
     },
-    function (err, token) {
-      console.log(token);
-    }
   );
   return token;
 };
 
 const videoCallToken = async (req, res) => {
+
   const token = await getToken();
-  res.status(200).json({ token: token });
+  res.status(200).send({ token: token });
 };
 
 module.exports = {
