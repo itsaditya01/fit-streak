@@ -16,11 +16,24 @@
 }
 
 .friends-list {
-  width: 80%;
+  width: 100%;
   padding: 20px;
   background: var(--bg-color);
   box-shadow: var(--shadow);
   border-radius: 12px;
   border: 1px solid white;
-  margin-top: 70px;
+  margin-top: 40px;
+}
+
+#search-btn {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
 }

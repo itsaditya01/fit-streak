@@ -118,11 +118,33 @@ export const pushUps = (poses, data, setter) => {
       state = 1;
     }
   }
-  if (previous_state == 1 && state == 0) {
+  if (previous_state === 1 && state === 0) {
     data.count++;
     console.log(data.count);
     data.reps--;
     setter(data.reps);
   }
+  previous_state = state;
+};
+
+export const neck_rotation = (poses, data, setter) => {
+  const nose_x = poses[0].x;
+  const le_x = poses[7].x;
+  const re_x = poses[8].x;
+
+  if (nose_x - re_x < 0) {
+    state = 1;
+  } else if (le_x - nose_x < 0) {
+    state = 2;
+  } else {
+    state = 0;
+  }
+
+  if ((previous_state === 1 || previous_state === 2) && state === 0) {
+    data.count++;
+    data.reps--;
+    setter(data.reps);
+  }
+
   previous_state = state;
 };

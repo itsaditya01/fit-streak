@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState, useContext } from "react";
 // import { useNavigate } from "react-router-dom";
-import { squats, pushUps } from "./ExercisesComponent";
+import { squats, pushUps, neck_rotation } from "./ExercisesComponent";
 import "../styles/camerarenderer.css";
 import { Camera } from "@mediapipe/camera_utils";
 import { Pose } from "@mediapipe/pose";
@@ -71,7 +71,7 @@ const connections = [
   [30, 32],
 ];
 
-const CameraRenderer = (props) => {
+const CameraRenderer = ({ videoCall }) => {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const context = useExercise();
@@ -116,7 +116,7 @@ const CameraRenderer = (props) => {
     } else if (exercises[currIndex].name === "Neck Rotation") {
       data.reps = exercises[currIndex].reps;
       console.log("neck");
-      squats(results.poseLandmarks, data, setReps);
+      neck_rotation(results.poseLandmarks, data, setReps);
     }
 
     const canvasCtx = canvasRef.current.getContext("2d");
@@ -158,11 +158,24 @@ const CameraRenderer = (props) => {
         score1 >= scoreThreshold &&
         score2 >= scoreThreshold &&
         i > 10 &&
-        j > 10
+        j > 10 &&
+        !videoCall
       ) {
         canvasCtx.beginPath();
         canvasCtx.moveTo(point1.x * 1280, point1.y * 720);
         canvasCtx.lineTo(point2.x * 1280, point2.y * 720);
+        canvasCtx.stroke();
+      }
+      if (
+        score1 >= scoreThreshold &&
+        score2 >= scoreThreshold &&
+        i > 10 &&
+        j > 10 &&
+        videoCall
+      ) {
+        canvasCtx.beginPath();
+        canvasCtx.moveTo(point1.x * 900, point1.y * 600);
+        canvasCtx.lineTo(point2.x * 900, point2.y * 600);
         canvasCtx.stroke();
       }
     });
@@ -187,15 +200,15 @@ const CameraRenderer = (props) => {
 
   return (
     <div>
-      <video ref={videoRef}></video>
+      <video ref={videoRef} style={{ display: "none" }}></video>
       <canvas
         ref={canvasRef}
-        width={"1280px"}
-        height={"720px"}
-        style={{ borderRadius: "var(--roundness" }}
+        width={!videoCall ? "1280px" : "900px"}
+        height={!videoCall ? "720px" : "600px"}
+        style={{ borderRadius: "var(--roundness)" }}
       ></canvas>
       <CountBar />
-      {!props.videoCall && <ExerciseBar curIndex={data.ind} />}
+      {!videoCall && <ExerciseBar curIndex={data.ind} />}
     </div>
   );
 };

@@ -26,7 +26,7 @@ function App() {
                   <Route
                     exact
                     path="/camerarenderer"
-                    element={<CameraRenderer />}
+                    element={<CameraRenderer videoCall={false} />}
                   />
                 </Routes>
               </ExerciseProvider>
