@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState, useContext } from "react";
 // import { useNavigate } from "react-router-dom";
-import { squats, pushUps } from "./ExercisesComponent";
+import { squats, pushUps, neck_rotation } from "./ExercisesComponent";
 import "../styles/camerarenderer.css";
 import { Camera } from "@mediapipe/camera_utils";
 import { Pose } from "@mediapipe/pose";
@@ -116,7 +116,7 @@ const CameraRenderer = ({ videoCall }) => {
     } else if (exercises[currIndex].name === "Neck Rotation") {
       data.reps = exercises[currIndex].reps;
       console.log("neck");
-      squats(results.poseLandmarks, data, setReps);
+      neck_rotation(results.poseLandmarks, data, setReps);
     }
 
     const canvasCtx = canvasRef.current.getContext("2d");
