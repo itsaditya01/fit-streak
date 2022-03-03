@@ -6,6 +6,7 @@ import { Camera } from "@mediapipe/camera_utils";
 import { Pose } from "@mediapipe/pose";
 import { WebData } from "../data/WebData";
 import { useExercise } from "../context/ExerciseContext";
+import ExerciseBar from "./ExerciseBar/ExerciseBar";
 
 const pose = new Pose({
   locateFile: (file) => {
@@ -170,46 +171,6 @@ const CameraRenderer = () => {
     canvasCtx.restore();
   }
 
-  const ExerciseBar = () => {
-    return (
-      <div
-        style={{
-          position: "absolute",
-          right: 0,
-          top: 0,
-        }}
-      >
-        <div
-          className="exercise-wrapper"
-          style={{ width: "calc(100vw - 1280px)" }}
-        >
-          <div className="exercise-inner w-100">
-            <ul style={{ listStyle: "none", paddingLeft: "0" }}>
-              {WebData.moreThan40.day1.exercise.map((item, index) => {
-                return (
-                  <li
-                    style={{
-                      color:
-                        curIndex === index
-                          ? "var(--bg-color)"
-                          : "var(--main-color)",
-                      paddingBlock: "20px",
-                      paddingInline: "10px",
-                      width: "100%",
-                      background: curIndex === index ? "var(--main-color)" : "",
-                    }}
-                  >
-                    {item.name}
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        </div>
-      </div>
-    );
-  };
-
   const CountBar = () => {
     return (
       <div className="count-wrapper">
@@ -225,7 +186,7 @@ const CameraRenderer = () => {
       <video ref={videoRef}></video>
       <canvas ref={canvasRef} width={"1280px"} height={"720px"}></canvas>
       <CountBar />
-      <ExerciseBar />
+      <ExerciseBar curIndex={curIndex} />
     </div>
   );
 };
