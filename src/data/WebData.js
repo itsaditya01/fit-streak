@@ -10,9 +10,9 @@ export const WebData = {
           reps: 1,
         },
         {
-          name: "Squats",
+          name: "Neck Rotation",
           sets: 1,
-          reps: 5,
+          reps: 1,
         },
         {
           name: "Push Ups",
