@@ -48,7 +48,7 @@ Install Frontend dependencies
 Go to the project backend directory
 
 ```bash
-  cd .\backend
+  cd backend
 ```
 
 Install Backend dependencies
@@ -60,7 +60,7 @@ Install Backend dependencies
 Start the server
 
 ```bash
-  nodemon .\index.js
+  nodemon index.js
 ```
 
 Start the local app
