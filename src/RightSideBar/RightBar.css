@@ -24,3 +24,16 @@
   border: 1px solid white;
   margin-top: 40px;
 }
+
+#search-btn {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
