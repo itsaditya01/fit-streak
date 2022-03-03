@@ -17,6 +17,7 @@ const Friends = ({ friend_name, friend_profile, friend_streak, RightBar }) => {
         <p className="friend-streak">
           {friend_streak} Day Streak{" "}
           <img
+            alt=""
             src={Fire}
             style={{ height: 30, width: "auto", marginLeft: 20 }}
           />

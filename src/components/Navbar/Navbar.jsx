@@ -11,7 +11,7 @@ function Navbar() {
             <span style={{ cursor: "pointer" }}>Fit Streak</span>
           </div>
           <div className="user-icon">
-            <FaUserAlt />
+            <FaUserAlt style={{ width: "100%", padding: "0px" }} />
           </div>
         </div>
       </nav>
