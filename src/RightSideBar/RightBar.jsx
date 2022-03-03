@@ -80,6 +80,7 @@ const RightBar = () => {
               friend_name={friend_profile.username}
               friend_profile={Friend1}
               RightBar={true}
+              search={true}
             />
           ) : null}
           <p className="rightbar-heading"> FRIENDS</p>

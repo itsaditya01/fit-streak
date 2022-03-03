@@ -12,7 +12,7 @@
 .friend-name {
   font-weight: 500;
   color: white;
-  margin-left: 40px;
+  margin-left: 30px;
   /* margin-right: 40px; */
 }
 .friend-streak {
@@ -21,4 +21,17 @@
   margin-left: auto;
   font-size: large;
   align-items: center;
+}
+
+.add-friend-icon {
+  margin-left: 15px;
+  font-size: 27px;
+  color: var(--main-color);
+  display: flex;
+  align-self: baseline;
+  transform: translateY(3px);
+  cursor: pointer;
+}
+.tick-icon {
+  color: green !important;
 }
