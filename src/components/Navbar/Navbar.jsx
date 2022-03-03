@@ -54,7 +54,7 @@ function Navbar() {
               <div className="email">
                 {`BMI : ${parseInt(
                   userdata.weight /
-                    ((userdata.height * userdata.height) / 10000)
+                  ((userdata.height * userdata.height) / 10000)
                 )}`}
               </div>
               <Link className="logout" onClick={handleLogout} to="/login">
@@ -65,6 +65,7 @@ function Navbar() {
           </div>
         </div>
       </nav>
+      <hr style={{ color: "white" }} />
     </div>
   );
 }
