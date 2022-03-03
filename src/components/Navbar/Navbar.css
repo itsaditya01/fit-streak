@@ -13,3 +13,55 @@
 .user-icon {
   color: var(--main-color);
 }
+.menu {
+  position: absolute;
+  top: 220%;
+  right: -158%;
+  background-color: rgba(97, 93, 93, 1);
+  padding: 20px;
+  box-sizing: 0 5px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: all 0.5s ease-in;
+  opacity: 0;
+  z-index: 500;
+  visibility: hidden;
+}
+.name {
+  text-align: center;
+  padding: 0 0 10px 0;
+  font-size: 1.4rem;
+}
+.email {
+  padding-bottom: 5px;
+  color: white !important;
+}
+.menu::before {
+  content: "";
+  position: absolute;
+  right: 18%;
+  top: -4%;
+  width: 15px;
+  height: 15px;
+  transform: rotate(45deg);
+  background-color: rgba(97, 93, 93, 1);
+  transition: all 0.3s ease;
+}
+.logout {
+  text-decoration: none;
+  text-align: center;
+  margin-inline: auto;
+  color: rgba(0, 0, 0, 0.514);
+}
+.logout:hover {
+  color: rgba(0, 0, 0, 0.6);
+}
+.user-icon {
+  transition: color 0.3s ease-out;
+}
+.menu:hover,
+.user-icon:hover ~ .menu {
+  visibility: visible;
+  z-index: 500;
+  opacity: 1;
+  top: 170%;
+}
