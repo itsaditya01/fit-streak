@@ -1,5 +1,6 @@
 import React from "react";
 import { WebData } from "../../data/WebData";
+import { Link } from "react-router-dom"
 
 function ExerciseBar(props) {
   return (
@@ -41,6 +42,20 @@ function ExerciseBar(props) {
                 </li>
               );
             })}
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <li
+                style={{
+                  color: "var(--bg-color)",
+                  borderRadius: "var(--roundness)",
+                  paddingBlock: "20px",
+                  paddingInline: "10px",
+                  width: "100%",
+                  background: "var(--main-color)"
+                }}
+              >
+                End Session
+              </li>
+            </Link>
           </ul>
         </div>
       </div>
