@@ -21,7 +21,7 @@ This app asks customers for their height, weight, and age to calculate their BMI
 
 ## Tech Stack
 
-**Client:** React, Firebase, MediaPipe Library, 100ms Library, OpenCV Library
+**Client:** React, Firebase, MediaPipe Library, 100ms Library.
 
 **Server:** Node, Express, MongoDB
 
